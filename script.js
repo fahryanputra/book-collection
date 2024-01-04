@@ -24,12 +24,31 @@ function createBookCards(array) {
         const bookCard = document.createElement("div");
         bookCard.setAttribute("class", "card");
 
-        // card div text content
+        // card div content
+        // title
         const titleText = document.createElement("p");
         titleText.textContent = element.title;
+        // author
+        const authorText = document.createElement("p");
+        authorText.textContent = element.author;
+        // year
+        const yearText = document.createElement("p");
+        yearText.textContent = element.year.toString();
+        // pages
+        const pagesText = document.createElement("p");
+        pagesText.textContent = element.page.toString();
+        // read status
+        const readText = document.createElement("p");
+        readText.textContent = element.read ? "Finished reading" : "Not yet read";
+        
 
         // append newly created element to cards collection
         bookCard.appendChild(titleText);
+        bookCard.appendChild(authorText);
+        bookCard.appendChild(yearText);
+        bookCard.appendChild(pagesText);
+        bookCard.appendChild(readText);
+
         cardsContainer.appendChild(bookCard);
     });
 }
