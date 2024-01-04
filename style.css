@@ -26,3 +26,24 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+dialog{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+}
+
+dialog > form {
+    margin-bottom: 2rem;
+}
+
+dialog > form > input{
+    display: block;
+    margin-bottom: 1rem;
+}
+
+dialog > form > .read-check {
+    display: inline;
+}

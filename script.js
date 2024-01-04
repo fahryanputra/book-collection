@@ -1,6 +1,10 @@
 // an array to store book collection
 const myCollection = [];
 
+const addBookButton = document.querySelector(".btn-add")
+const dialog = document.querySelector("dialog");
+const submitButton = document.querySelector(".btn-submit");
+
 // Book constructor function
 function Book(title, author, year, page, read) {
     this.title = title;
@@ -52,6 +56,14 @@ function createBookCards(array) {
         cardsContainer.appendChild(bookCard);
     });
 }
+
+addBookButton.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+submitButton.addEventListener("click", () => {
+    dialog.close();
+})
 
 // seed myCollection array
 const sherlock = new Book("The Adventures of Sherlock Holmes", "Sir Arthur Conan Doyle", 1892, 307, false);
