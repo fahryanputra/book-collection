@@ -6,9 +6,15 @@
     padding: 0;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background-color: #e5e5e5;
     font-family: 'Poppins', sans-serif;
+    margin-bottom: 2rem;
 }
 
 button {
@@ -156,6 +162,11 @@ dialog > form > .check-container > input {
 footer {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     font-size: 20px;
     font-weight: 600;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
 }

@@ -87,7 +87,7 @@ function createBookCards(array) {
             if(element.id > -1) {
                 array = array.splice(element.id, 1);
             };
-            e.target.parentNode.remove();
+            e.target.parentNode.parentNode.remove();
         });
 
         readButton.addEventListener("click", (e) => {
