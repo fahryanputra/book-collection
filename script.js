@@ -114,7 +114,7 @@ addBookButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click", (e) => {
     const inputs = document.querySelectorAll("#bookTitle, #bookAuthor, #bookYear, #bookPage")
-    const req_input = 0;
+    let req_input = 0;
     inputs.forEach(input => {
         if(input.value !== "") {
             req_input++;
