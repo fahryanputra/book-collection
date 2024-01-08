@@ -126,12 +126,3 @@ submitButton.addEventListener("click", (e) => {
         dialog.close();
     }
 })
-
-// // seed myCollection array
-const sherlock = new Book(myCollection.length,"The Adventures of Sherlock Holmes", "Sir Arthur Conan Doyle", 1892, 307, false);
-// const poirot = new Book("The Murder on the Links", "Agatha Christie", 1923, 298, false);
-
-// // add new object to the array
-myCollection.push(sherlock);
-createBookCards(myCollection);
-// myCollection.push(poirot);
