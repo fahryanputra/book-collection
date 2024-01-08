@@ -14,10 +14,10 @@
     <div class="content">
         <dialog>
             <form method="dialog" id="bookForm" action="#">
-                <input type="text" name="title" id="bookTitle" placeholder="Title">
-                <input type="text" name="author" id="bookAuthor" placeholder="Author">
-                <input type="text" name="year" id="bookYear" placeholder="Year">
-                <input type="number" name="page" id="bookPage" placeholder="Pages">
+                <input type="text" name="title" id="bookTitle" placeholder="Title" required>
+                <input type="text" name="author" id="bookAuthor" placeholder="Author" required>
+                <input type="text" name="year" id="bookYear" placeholder="Year" required>
+                <input type="number" name="page" id="bookPage" placeholder="Pages" required>
                 <label class="check-container">Read
                     <input type="checkbox" name="read" id="bookRead">
                     <span class="checkmark"></span>
@@ -26,7 +26,7 @@
             <button form="bookForm" type="submit" class="btn-submit">Add</button>
         </dialog>
         <div class="add-btn-container">
-            <button class="btn-add">Add Book</button>
+            <button type="button" class="btn-add">Add Book</button>
         </div>
         <div class="cards"></div>
     </div>

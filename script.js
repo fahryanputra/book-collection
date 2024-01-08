@@ -60,10 +60,12 @@ function createBookCards(array) {
         } else {
             readButton.textContent = "Not read";
         }
+        readButton.type = "button";
         // remove card button
         const removeCard = document.createElement("button");
         removeCard.setAttribute("class", "btn-remove");
         removeCard.textContent = "Remove";
+        removeCard.type = "button";
 
         // append newly created element to cards collection
         bookCard.appendChild(titleText);
@@ -103,13 +105,26 @@ function createBookCards(array) {
 }
 
 addBookButton.addEventListener("click", () => {
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        input.value = "";
+    });
     dialog.showModal();
 })
 
-submitButton.addEventListener("click", () => {
-    addBookToCollection()
-    createBookCards(myCollection);
-    dialog.close();
+submitButton.addEventListener("click", (e) => {
+    const inputs = document.querySelectorAll("#bookTitle, #bookAuthor, #bookYear, #bookPage")
+    const req_input = 0;
+    inputs.forEach(input => {
+        if(input.value !== "") {
+            req_input++;
+        }
+    });
+    if(req_input === inputs.length){
+        addBookToCollection();
+        createBookCards(myCollection);
+        dialog.close();
+    }
 })
 
 // // seed myCollection array
