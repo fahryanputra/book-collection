@@ -54,6 +54,10 @@ function createBookCards(array) {
         // read status
         const readText = document.createElement("p");
         readText.textContent = element.read ? "Finished reading" : "Not yet read";        
+        // remove card button
+        const removeCard = document.createElement("button");
+        removeCard.setAttribute("class", "btn-remove");
+        removeCard.textContent = "Remove";
 
         // append newly created element to cards collection
         bookCard.appendChild(titleText);
@@ -61,8 +65,14 @@ function createBookCards(array) {
         bookCard.appendChild(yearText);
         bookCard.appendChild(pagesText);
         bookCard.appendChild(readText);
+        bookCard.appendChild(removeCard);
 
         cardsContainer.appendChild(bookCard);
+
+        // remove card event
+        removeCard.addEventListener("click", (e) => {
+            e.target.parentNode.remove();
+        });
     });
 }
 
