@@ -53,8 +53,13 @@ function createBookCards(array) {
         const pagesText = document.createElement("p");
         pagesText.textContent = element.page.toString();
         // read status
-        const readText = document.createElement("p");
-        readText.textContent = element.read ? "Finished reading" : "Not yet read";        
+        const readButton = document.createElement("button");
+        if(element.read === true) {
+            readButton.setAttribute("class", "btn-read");
+            readButton.textContent = "Read";
+        } else {
+            readButton.textContent = "Not read";
+        }
         // remove card button
         const removeCard = document.createElement("button");
         removeCard.setAttribute("class", "btn-remove");
@@ -65,7 +70,7 @@ function createBookCards(array) {
         bookCard.appendChild(authorText);
         bookCard.appendChild(yearText);
         bookCard.appendChild(pagesText);
-        bookCard.appendChild(readText);
+        bookCard.appendChild(readButton);
         bookCard.appendChild(removeCard);
 
         cardsContainer.appendChild(bookCard);
@@ -76,6 +81,16 @@ function createBookCards(array) {
                 array = array.splice(element.id, 1);
             };
             e.target.parentNode.remove();
+        });
+
+        readButton.addEventListener("click", (e) => {
+            if(e.target.classList.contains("btn-read")) {
+                e.target.removeAttribute("class", "btn-read");
+                readButton.textContent = "Not read";
+            } else {
+                e.target.setAttribute("class", "btn-read");
+                readButton.textContent = "Read"
+            }
         });
     });
 }

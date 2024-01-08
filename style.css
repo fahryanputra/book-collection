@@ -23,6 +23,12 @@ header {
     margin-bottom: 2rem;
 }
 
+.content > .add-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 dialog{
     position: absolute;
     left: 50%;
