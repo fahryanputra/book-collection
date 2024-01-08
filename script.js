@@ -70,8 +70,13 @@ function createBookCards(array) {
         bookCard.appendChild(authorText);
         bookCard.appendChild(yearText);
         bookCard.appendChild(pagesText);
-        bookCard.appendChild(readButton);
-        bookCard.appendChild(removeCard);
+
+        const buttonContainer = document.createElement("div");
+        buttonContainer.setAttribute("class", "btn-container");
+        buttonContainer.appendChild(readButton);
+        buttonContainer.appendChild(removeCard);
+
+        bookCard.appendChild(buttonContainer)
 
         cardsContainer.appendChild(bookCard);
 
