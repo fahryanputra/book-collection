@@ -6,7 +6,8 @@ const dialog = document.querySelector("dialog");
 const submitButton = document.querySelector(".btn-submit");
 
 // Book constructor function
-function Book(title, author, year, page, read) {
+function Book(id, title, author, year, page, read) {
+    this.id = id;
     this.title = title;
     this.author = author;
     this.year = year;
@@ -22,7 +23,7 @@ function addBookToCollection() {
     const pageInput = document.getElementById("bookPage").value;
     const readInput = document.getElementById("bookRead").checked;
 
-    const newBook = new Book(titleInput, authorInput, yearInput, pageInput, readInput);
+    const newBook = new Book(myCollection.length, titleInput, authorInput, yearInput, pageInput, readInput);
     myCollection.push(newBook);
 };
 
@@ -71,6 +72,9 @@ function createBookCards(array) {
 
         // remove card event
         removeCard.addEventListener("click", (e) => {
+            if(element.id > -1) {
+                array = array.splice(element.id, 1);
+            };
             e.target.parentNode.remove();
         });
     });
@@ -87,7 +91,7 @@ submitButton.addEventListener("click", () => {
 })
 
 // // seed myCollection array
-const sherlock = new Book("The Adventures of Sherlock Holmes", "Sir Arthur Conan Doyle", 1892, 307, false);
+const sherlock = new Book(myCollection.length,"The Adventures of Sherlock Holmes", "Sir Arthur Conan Doyle", 1892, 307, false);
 // const poirot = new Book("The Murder on the Links", "Agatha Christie", 1923, 298, false);
 
 // // add new object to the array
