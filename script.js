@@ -51,7 +51,7 @@ function createBookCards(array) {
         yearText.textContent = element.year.toString();
         // pages
         const pagesText = document.createElement("p");
-        pagesText.textContent = element.page.toString();
+        pagesText.textContent = `${element.page.toString()} pages`;
         // read status
         const readButton = document.createElement("button");
         if(element.read === true) {
@@ -87,9 +87,11 @@ function createBookCards(array) {
             if(e.target.classList.contains("btn-read")) {
                 e.target.removeAttribute("class", "btn-read");
                 readButton.textContent = "Not read";
+                element.read = false;
             } else {
                 e.target.setAttribute("class", "btn-read");
                 readButton.textContent = "Read"
+                element.read = true;
             }
         });
     });

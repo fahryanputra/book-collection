@@ -14,16 +14,14 @@
     <div class="content">
         <dialog>
             <form method="dialog" id="bookForm" action="#">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="bookTitle">
-                <label for="author">Author</label>
-                <input type="text" name="author" id="bookAuthor">
-                <label for="year">Year</label>
-                <input type="text" name="year" id="bookYear">
-                <label for="page">Page</label>
-                <input type="number" name="page" id="bookPage">
-                <input class="read-check" type="checkbox" name="read" id="bookRead">
-                <label for="read">Read</label>
+                <input type="text" name="title" id="bookTitle" placeholder="Title">
+                <input type="text" name="author" id="bookAuthor" placeholder="Author">
+                <input type="text" name="year" id="bookYear" placeholder="Year">
+                <input type="number" name="page" id="bookPage" placeholder="Pages">
+                <label class="check-container">Read
+                    <input type="checkbox" name="read" id="bookRead">
+                    <span class="checkmark"></span>
+                </label>
             </form>
             <button form="bookForm" type="submit" class="btn-submit">Add</button>
         </dialog>
